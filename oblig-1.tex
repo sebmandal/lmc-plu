@@ -1,0 +1,102 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\usepackage{asmath}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Oblig 1 - IN1020}
+\author{Sebastian Wilhelm Kristian Pritchard-Davies Mandal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{3 Oppgaven}
+
+\subsection*{3.1 Et register med PLU koder}
+
+Her er fire ekstra egenskaper matvarer kan ha som kan være nyttige å representere digitalt:
+
+\begin{enumerate}
+    \item \textbf{Lagerstatus}: Indikerer om varen er på lager (1) eller utsolgt (0).
+    \item \textbf{Kategori}: Klassifiserer varen i en gruppe, som "frukt", "grønnsaker", etc. Dette kan være en numerisk kode.
+    \item \textbf{Beskrivelse}: En numerisk kode som refererer til en liste med tekstbeskrivelser av varen.
+    \item \textbf{Mengde}: Antall enheter kjøpt, nyttig for bulk-kjøp.
+\end{enumerate}
+
+Tabellen nedenfor viser hvordan disse egenskapene kan representeres:
+
+\begin{tabular}{|l|l|r|l|l|}
+    \hline
+    Hva            & Beskrivelse                                          & Antall celler & Verdier      & Datatype \\
+    \hline
+    PLU            & Koden kassereren slår opp                           & 1             & 0 til 999    & Heltall  \\
+    Pris           & Prisen til varen, brukt til å beregne totalpris      & 1             & 0 til 999    & Heltall  \\
+    Lagerstatus    & Om varen er på lager (1) eller utsolgt (0)           & 1             & 0 eller 1    & Heltall  \\
+    Kategori       & Varenes kategori (numerisk kode)                     & 1             & 0 til 9      & Heltall  \\
+    Beskrivelse    & Kode som refererer til en beskrivelse                 & 1             & 0 til 99     & Heltall  \\
+    Mengde         & Antall enheter kjøpt                                & 1             & 0 til 999    & Heltall  \\
+    \hline
+\end{tabular}
+
+\subsection*{3.2 Minnestruktur og Minnebruk}
+
+LMC har 100 minneceller. Vi må planlegge hvordan vi bruker minnet effektivt for både matvaredata og programkode.
+
+\subsubsection*{Minnestruktur for Matvarer}
+
+Hvis hver vare bruker 6 celler, kan vi lagre 2 varer med cellene 0-11:
+
+\begin{tabular}{|r|l|}
+    \hline
+    Celle & Hva            \\
+    \hline
+    0-5   & Vare 1 data    \\
+    6-11  & Vare 2 data    \\
+    \hline
+\end{tabular}
+
+Dette betyr at vi kan lagre data for 2 matvarer i cellene 0-11. De resterende cellene kan brukes til programkode og eventuell ekstra data.
+
+\subsubsection*{Bruk av Minne}
+
+\begin{tabular}{|r|l|}
+    \hline
+    Celleområde  & Hva            \\
+    \hline
+    0-11         & Data for matvarer (2 varer, hver bruker 6 celler) \\
+    12-15        & Kan brukes til ekstra data eller programkode \\
+    16-99        & Programkode og eventuelle ekstra data \\
+    \hline
+\end{tabular}
+
+\subsubsection*{Hvor Mange Matvarer Kan Lagres?}
+
+Med 16 celler til rådighet for matvarer (0-15) og 6 celler per vare, kan du lagre:
+
+\[
+\frac{16 \text{ celler}}{6 \text{ celler per vare}} \approx 2 \text{ varer}
+\]
+
+\subsubsection*{Oppsummering og Forslag}
+
+1. **Dataområde**:
+   - Celler 0-11: Data for 2 matvarer (6 celler per vare).
+
+2. **Kodeområde**:
+   - Celler 12-99: Programkode og ekstra data.
+
+For å lagre flere matvarer eller ha plass til mer programkode, kan du vurdere:
+- **Effektiv Datarepresentasjon**: Bruk indekser eller kompakte dataformater.
+- **Ekstra Minne**: Hvis mulig, se etter måter å utvide minnet eller optimalisere bruken.
+
+\end{document}
