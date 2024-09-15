@@ -39,9 +39,11 @@ Denne versjonen legger til funksjonalitet for error handling og stock management
 
 (eksempel 405 - eple)
 
-`405 - heltall 405`
-`P405 - pris for eple`
-`S405 - tilgjengelighet for eple`
+- `405 - heltall 405`
+
+- `P405 - pris for eple`
+
+- `S405 - tilgjengelighet for eple`
 
 #### Nå har jeg error meldinger som består av følgende:
 
