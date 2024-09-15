@@ -12,7 +12,7 @@
 
 ## Versjoner og utfordringer møtt
 
-Se versjoner på [Github](https://github.com/sebmandal/lmc-plu-management)
+Se versjoner på [Github](https://github.com/sebmandal/lmc-plu)
 
 ###### Jeg legger ut denne rett etter fristen slik at ingen kan plagiere løsningen min.
 
@@ -39,9 +39,11 @@ Denne versjonen legger til funksjonalitet for error handling og stock management
 
 (eksempel 405 - eple)
 
-`405 - heltall 405`
-`P405 - pris for eple`
-`S405 - tilgjengelighet for eple`
+- `405 - heltall 405`
+
+- `P405 - pris for eple`
+
+- `S405 - tilgjengelighet for eple`
 
 #### Nå har jeg error meldinger som består av følgende:
 
