@@ -12,7 +12,7 @@
 
 ## Versjoner og utfordringer møtt
 
-Se versjoner på [Github](https://github.com/sebmandal/lmc-plu-management)
+Se versjoner på [Github](https://github.com/sebmandal/lmc-plu)
 
 ###### Jeg legger ut denne rett etter fristen slik at ingen kan plagiere løsningen min.
 
