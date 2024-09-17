@@ -2,6 +2,14 @@
 
 - Sebastian Wilhelm Kristian Pritchard-Davies Mandal
 
+- Jeg klarte å bruke feil simulator og skjønte ikke det før det var alt for sent... Det er 50 minutter til innlevering og jeg vet ikke om jeg rekker å fikse det.
+
+Jeg brukte [denne](https://www.101computing.net/LMC/) fordi jeg hadde klikket feil lenke på Google og trodde det var riktig. Jeg vet det står at man får ikke godkjent hvis man ikke kan kjøre den på Peter Higginson, men jeg håper dette går fint.
+
+Jeg skal prøve å fikse koden til å funke med riktig simulator, men er usikker på om jeg får det til i tide.
+
+- Bruk Tab Size 8 for lesbarhet i `kode.txt`
+
 ## PLU koder
 
 - Jeg har PLU 405 for eple, med pris 5 og tilgjengelighet på 8
@@ -60,3 +68,11 @@ Derfor er det viktig å være kjent med error kodene.
 #### Jeg møtte en utfordring her også:
 
 1. Hvordan kan jeg gjøre error handling? Svar: Jeg måtte endre på en del kode og hvordan jeg håndterer inputs slik at jeg kan sjekke ting på slutten uten at den gjør logikk før den har sjekket.
+
+### Versjon fristen
+
+#### OPPDATERING: Massiv feil fra min side, stor utfordring haha
+
+Jeg hadde brukt feil simulator hele denne tiden... Koden min gir ingen errormeldinger på Peter Higginson simulatoren, men den går i en uendelig loop ett eller annet sted i koden. Jeg må fikse dette ASAP og så dette når jeg leste over for å levere inn klokken 22:53 på innleveringsdagen.
+
+Den nye versjonen er veldig barebones og har bare nødvendig funksjonalitet til oppgavebeskrivelsen, men alt kjører fint :)
