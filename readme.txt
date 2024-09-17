@@ -1,78 +1,61 @@
-# README for Oblig 1 i IN1020
+README for Oblig 1 i IN1020
 
-- Sebastian Wilhelm Kristian Pritchard-Davies Mandal
+Navn: Sebastian Wilhelm Kristian Pritchard-Davies Mandal
 
-- Jeg klarte å bruke feil simulator og skjønte ikke det før det var alt for sent... Det er 50 minutter til innlevering og jeg vet ikke om jeg rekker å fikse det.
+Merk: Jeg klarte å bruke feil simulator og skjønte ikke det før det var alt for sent. Jeg rakk å skrive oppgaven på nytt slik at den fungerer og dekker alle kravene, men hvis dere ønsker å se de tidligere versjonene med litt mer funksjonalitet (beskrevet under) gjerne ta en titt på [Github-siden](https://github.com/sebmandal/lmc-plu) :)
 
-Jeg brukte [denne](https://www.101computing.net/LMC/) fordi jeg hadde klikket feil lenke på Google og trodde det var riktig. Jeg vet det står at man får ikke godkjent hvis man ikke kan kjøre den på Peter Higginson, men jeg håper dette går fint.
+Bruk Tab Size 8 for lesbarhet i `kode.txt`.
 
-Jeg skal prøve å fikse koden til å funke med riktig simulator, men er usikker på om jeg får det til i tide.
+---
 
-- Bruk Tab Size 8 for lesbarhet i `kode.txt`
+### PLU Koder
 
-## PLU koder
+PLU 1 med pris på 100
+PLU 2 med pris på 200
 
-- Jeg har PLU 405 for eple, med pris 5 og tilgjengelighet på 8
+---
 
-- Jeg har PLU 307 for rundstykke, med pris på 7 og tilgjengelighet på 5
+Versjoner og Utfordringer Møtt
 
-- Jeg har PLU 303 for appelsin, med pris på 9 og tilgjengelighet på 10
+Se versjoner på [Github](https://github.com/sebmandal/lmc-plu). Jeg legger ut denne rett etter fristen slik at ingen kan plagiere løsningen min.
 
-## Versjoner og utfordringer møtt
+1. Første Versjon
 
-Se versjoner på [Github](https://github.com/sebmandal/lmc-plu)
+Funksjonalitet: Denne versjonen lar deg skrive en PLU (alle unntatt 0 har samme funksjonalitet) og spør om mengde av varen du ønsker å kjøpe.
+Utfordringer: Ingen store utfordringer. Jeg måtte bare bli vant til språket og måten å skrive kode på i det.
 
-###### Jeg legger ut denne rett etter fristen slik at ingen kan plagiere løsningen min.
+2. Andre Versjon
 
-### Første versjon
+Funksjonalitet: Denne versjonen lar deg velge mellom flere produkter. Hvis du velger et produkt som ikke eksisterer, vil den kaste en utfordring.
+Utfordringer:
+1. Hvordan kan jeg sjekke pris dynamisk? Svar: Jeg kunne ikke gjøre dette. Jeg måtte legge til en redundant funksjon for å sjekke om en PLU er valgt, og så assigne prisen til prisvariabelen.
+2. Hvordan kan jeg gjøre koden lesbar? Svar: Jeg delte opp alle funksjonene i sine respektive roller, slik at alle funksjoner er lette å forstå, og én funksjon gjør bare én ting.
 
-Denne bare lar deg skrive en PLU (alle unntatt 0 har samme funksjonalitet) og spør om mengde av denne varen du ønsker å kjøpe.
+3. Tredje Versjon
 
-#### Ingen utfordringer så langt, jeg måtte bare bli vant til språket og måten man skriver kode på i det.
+Funksjonalitet: Denne versjonen legger til funksjonalitet for error handling og lagerstyring.
 
-### Andre versjon
+3-a. Variabler
 
-Denne versjonen lar deg velge mellom flere produkter, hvis du velger et produkt som ikke eksisterer vil den kaste deg utfordringer
+For eksempel, for eple med PLU 405:
 
-#### Jeg møtte to utfordringer her:
+- `405` heltall 405
+- `P405` pris for eple
+- `S405` tilgjengelighet for eple
 
-1. Hvordan kan jeg sjekke pris dynamisk? Svar: Jeg kunne ikke det, jeg må bare legge til en redundant funksjon for å sjekke om det er valgt en PLU også assigne prisen til pris variablen.
-2. Hvordan kan jeg gjøre det lesbart? Svar: Jeg splittet alle funksjonene inn i sine respektive roller, slik at alle funksjoner er lette å forstå og at én funksjon aldri gjør mer enn én ting.
-
-### Tredje versjon
-
-Denne versjonen legger til funksjonalitet for error handling og stock management
-
-#### Nå har jeg de følgende variablene for hver vare:
-
-(eksempel 405 - eple)
-
-- `405 - heltall 405`
-
-- `P405 - pris for eple`
-
-- `S405 - tilgjengelighet for eple`
-
-#### Nå har jeg error meldinger som består av følgende:
+3-b. Error Meldinger
 
 - 501 for PLU error (produktet eksisterer ikke)
 - 502 for COUNT error (antall varer ønsket er mindre enn 0)
 - 503 for STOCK error (vi har ikke nok av dette produktet til å kjøpe mengden du etterspør)
 
-Enda en ting med denne versjonen er at hvis det kommer en error-kode i OUTPUT, så betyr det alltid at du må skrive input på nytt. Den går ikke videre før den har fått en riktig kode.
+Spesifikasjoner: Hvis det kommer en error-kode i OUTPUT, må du skrive input på nytt. Systemet går ikke videre før det har fått en riktig kode, unntatt START-funksjonen som alltid vil spørre om både PLU og COUNT, uansett om PLU ikke eksisterer. Derfor er det viktig å være kjent med error kodene.
+Utfordring: Hvordan gjøre error handling? Svar: Jeg måtte endre en del kode og håndtering av inputs slik at jeg kan sjekke ting på slutten uten å gjøre logikk før den har sjekket.
 
-Dette er med unntak av START funskjonen, der den alltid vil spørre både om PLU og COUNT uansett om PLU ikke eksisterer.
+4. Versjon ved Fristen
 
-Derfor er det viktig å være kjent med error kodene.
+OPPDATERING: Massiv feil fra min side, stor utfordring haha. Jeg hadde brukt feil simulator hele tiden. Koden min gir ingen errormeldinger på Peter Higginson simulatoren, men den går i en uendelig loop et eller annet sted i koden. Jeg må fikse dette ASAP og så dette når jeg leste over for å levere inn klokken 22:53 på innleveringsdagen.
 
-#### Jeg møtte en utfordring her også:
+Status: Den nye versjonen er veldig barebones og har bare nødvendig funksjonalitet til oppgavebeskrivelsen, men alt kjører fint.
 
-1. Hvordan kan jeg gjøre error handling? Svar: Jeg måtte endre på en del kode og hvordan jeg håndterer inputs slik at jeg kan sjekke ting på slutten uten at den gjør logikk før den har sjekket.
-
-### Versjon fristen
-
-#### OPPDATERING: Massiv feil fra min side, stor utfordring haha
-
-Jeg hadde brukt feil simulator hele denne tiden... Koden min gir ingen errormeldinger på Peter Higginson simulatoren, men den går i en uendelig loop ett eller annet sted i koden. Jeg må fikse dette ASAP og så dette når jeg leste over for å levere inn klokken 22:53 på innleveringsdagen.
-
-Den nye versjonen er veldig barebones og har bare nødvendig funksjonalitet til oppgavebeskrivelsen, men alt kjører fint :)
+Jeg rakk det, woo!
